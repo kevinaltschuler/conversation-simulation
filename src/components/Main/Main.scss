@@ -1,0 +1,115 @@
+@import '../../../node_modules/normalize.css/normalize.css';
+
+/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
+
+@import '../variables.scss';
+
+body {
+	font-family: "Lucida Console", Monaco, monospace;
+}
+
+.gameContainer {
+	width: 800px;
+	height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(0,0,0,1);
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: column
+}
+
+.backgroundVisuals{
+	margin: auto;
+	height: 45%;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.choicesPanel {
+	background-color: rgba(0,0,0,0);
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	position: absolute;
+	margin-left: auto;
+	width: 800px;
+	margin-right: auto;
+	z-index: 99;
+	margin-top: -200px;
+}
+
+.textButton {
+	display: flex;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 30px;
+	color: #fff;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	padding-left: 20px;
+	padding-right: 20px;
+	//border-style: solid;
+	//border-width: 1px;
+	//border-color: #fff;
+	margin-left: 6%;
+	margin-right: 6%;
+	//box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+	//transition: all .1s ease-in-out;
+}
+
+.textButton:hover {
+	//background-color: rgba(0,0,0,.15);
+}
+
+.textButton:active {
+	//box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);
+	//background-color: rgba(0,0,0,.34);
+}
+
+.responseText {
+	text-shadow: 0 1px 6px rgba(0, 0, 0, 0.16), 0 3px 10px rgba(0, 0, 0, 0.23);
+	transition: all .1s ease-in-out;
+	color: rgba(255,255,255,1);
+	cursor: pointer; 
+	cursor: hand; 
+	flex-direction: row;
+	display: flex;
+	align-items: center;
+}
+
+.responseText:hover {
+	color: #fff;
+	//background-color: rgba(0,0,0,.15);
+}
+
+.responseText:active {
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+	//background-color: rgba(0,0,0,.34);
+	margin-top: 10px;
+}
+
+.dialogue {
+	color: #fff;
+}
+
+.blinking {
+	right: 30px;
+	margin-top: 530px;
+	color: #fff;
+	animation: blinker 3s linear infinite;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 10px;
+}
+
+@keyframes blinker {  
+  50% { margin-top: 540px; }
+}
