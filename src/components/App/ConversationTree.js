@@ -2,6 +2,10 @@ var end2 = [
 	{text: '', response: '', score: 0}
 ]
 
+var end = [
+	{text: 'end', response: '.', score: 0, next: end2}
+]
+
 var next3a = [
 	{text: "lets get the phone", response: 'thank you', score: 10, next: end},
 	{text: "you suck", response: 'were breaking up', score: -10, next: end}
@@ -15,9 +19,7 @@ var next2 = [
 var next1 = [
 	{text: '', response: 'What will they think if they know I cant keep my family stable?', score: 0, next: next2}
 ]
-var end = [
-	{text: '', response: '', score: 0, next: end2}
-]
+
 
 var l4c1 = [
 	{text: "I hate you and I'm leaving you", response: '', score: -30, next: end},
@@ -68,7 +70,7 @@ var l3c17 = [
 var l2c1 = [
 	{text: "I understand but he’s not my responsibility", response: "Maybe, but you need to think about how I feel!", next: l3c1},
 	{text: "i'm just not ready to raise a son", response: "I know it’s a big commitment. but i think we can do this.", next: l3c2},
-	{text: "Could anybody else could look after him?", score: 10, response: "I mean, I guess my parents could. But I haven't told them yet.", next: l3c17}
+	{text: "Could anybody else look after him?", score: 10, response: "I mean, I guess my parents could. But I haven't told them yet.", next: l3c17}
 ]
 var l2c2 = [
 	{text: 'I didn’t mean it that way', response: 'so what DID you mean?', score: -5, next: l3c5},

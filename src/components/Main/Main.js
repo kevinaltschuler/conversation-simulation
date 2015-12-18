@@ -7,6 +7,7 @@ import withStyles from '../../decorators/withStyles';
 //import Ink from 'react-ink';
 import ResponseButton from './ResponseButton'
 
+
 //@withContext
 @withStyles(s)
 class Main extends Component {
@@ -27,7 +28,9 @@ class Main extends Component {
       waitingForMessage: false,
       option: {},
       scoreDelta: 0,
-      splashScreen: true
+      splashScreen: true,
+      
+      
 
   };
 
@@ -47,6 +50,7 @@ class Main extends Component {
   };
 
   writeMessage(message, index, interval, option) { 
+    var hisAudio = new Audio('https://dl.dropboxusercontent.com/u/53274637/me.wav');
     if(this.state.option != option ) { 
       this.setState({option: option});
       this.displayScore(option); 
@@ -59,8 +63,9 @@ class Main extends Component {
       this.props.updateTree(option.next);
     }
     if ( message != undefined && index < message.length) {
-      var audio = new Audio('https://dl.dropboxusercontent.com/u/53274637/me.wav');
-      audio.play();
+      if(index % 2 == 0) {
+        hisAudio.play();
+      }
       var newMessage = (index == 0) ? message[index] : this.state.message + message[index];
       this.setState({
         message: newMessage,
@@ -86,10 +91,12 @@ class Main extends Component {
   };
 
   writeResponse(response, index, interval) { 
+    var herAudio = new Audio('https://dl.dropboxusercontent.com/u/53274637/her.wav');
     if (response != undefined && index < response.length) {
       var newResponse = (index == 0) ? response[index] : this.state.response + response[index];
-      var audio = new Audio('https://dl.dropboxusercontent.com/u/53274637/her.wav');
-      audio.play();
+      if(index % 2 == 0) {
+        herAudio.play();
+      }
       this.setState({
         response: newResponse,
         hideOptions: true
